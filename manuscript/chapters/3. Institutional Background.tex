@@ -1,0 +1,121 @@
+
+
+\chapter{Institutional Background - Floods in France}
+\label{ch: Background}
+
+Modern French flood management traces a long arc from the pioneering work of Eugène Belgrand to the present‐day Cat-Nat insurance regime. In \emph{La Seine: études hydrologiques}, \cite{Belgrand1872} produced a systematic hydrological history of the Seine, mapped past inundations and, crucially, installed one of Europe’s first telegraphic flood-warning chains, marking the transition from ad-hoc relief from flooding to a proto-system of risk management. In parallel, the institutionalization of the insurance industry gave rise to specialized markets for insurance against natural catastrophes. \cite{grislain2018natural} discusses the development of such markets in France. The \cite{OECD2021} offers a comparative overview of contemporary catastrophe risk insurance programs, while \cite{bock2024flood} lay out a comparison of flood insurance regimes in Europe. %These modern interventions reflect a shift from controlling floods to adapting to them. 
+%In France, from Belgrand’s large scale structural interventions—elevation of flood walls, reshaping of riverbeds, and the construction of reservoir lakes—to today’s more integrated approach, policy has evolved, seeing the development of temporary flood-retention zones, urban infiltration systems, reinforcement of existing levees, and managed realignment in vulnerable floodplains.  
+%International benchmarking and shared learning can be helpful: for example, the Netherlands (Holland—literally “low country”), shaped by its hisotrical exposure to flooding, has developed an ever-innovative flood management system today based on sponge parks, rain tunnels, and elevated housing. 
+
+Flood protection in France today rests on four pillars. First, real-time hydrometeorological monitoring is delivered by the \texit{Vigicrues} network, which comprises over 3200 gauges linked to the national flood-forecast centre (SCHAPI). This system provides basin-wide alerts disseminated through the web, sirens, and SMS systems. Second, exposure is managed through spatial planning. Cartographic tools such as the \emph{Atlas des Zones Inondables} (AZI) and the \emph{Enveloppes Approchées des Inondations Potentielles} (EAIP) support regulatory zoning frameworks. These inform \emph{Plans de Prévention du Risque Inondation} (PPRI), which delineate build and no-build zones in flood-prone areas. The EU Floods Directive, now in its third implementation cycle, further designates 122 \emph{Territoires à Risque Important d’Inondation} (TRI) in France, each tied to a six-year management plan (PGRI). Third, France can draw upon supra-national layers. After the November 2023 Nord–Pas-de-Calais floods, for instance, the country received €46.7 million from the EU Solidarity Fund, which played a significant role in financing early recovery efforts. Fourth, and most relevant for this paper, financial protection is delivered through the public–private \emph{Cat-Nat} insurance regime, making insurance coverage for flooding nearly universal in France \citep{bock2024flood}. Created by the law of July 13, 1982, France’s Cat-Nat scheme requires that all homeowners’ and commercial insurance policies include a mandatory extension covering natural disasters. This law established the Cat-Nat (natural disasters) system as a public–private partnership, obliging insurers to add this coverage to property insurance policies and activating state involvement via the \textit{Caisse Centrale de Réassurance} (CCR), the state-backed reinsurer, which provides unlimited reinsurance capacity underwritten by a government guarantee from the French Treasury. The trigger conditions for claims arise when a commune experiences “abnormal intensity of a natural agent,” prompting the mayor to petition the inter-ministerial Cat-Nat committee. If the petition is approved and a "state of natural disaster" is officially declared by interministerial decree, the decision is published in the \emph{Journal Officiel}. This decree activates indemnities for damages not otherwise covered and opens the door to co-financed protective works. Household and business compensation is typically delivered within weeks, whereas public infrastructure funding is disbursed over a two- to three-year horizon. Such non–risk-indexed natural catastrophe insurance can thus be regarded as a desirable form of lump-sum taxation in France. \\
+
+
+%1910 Floods case study see \citep{CCR2016SeineFloods}. 
+%A warming climate causes sea-level rise by melting glaciers and by increasing the amount of water vapour in our atmosphere through more evaporation of water. Just as drier areas are likely to get drier with rising global temperatures, those regions of the world that have historically trended toward heavy precipitation will only get wetter. This overall increases the liklyhood of flooding.
+
+%%%%% Figure: Flood History
+\vspace{0.15 cm}
+   \begin{figure}[H]
+    \centering
+    \caption{\textbf{Figure \ref{fig:flood_map}:} Flood map (2010-2019)}
+    \label{fig:flood_map}
+    \includegraphics[width=1\textwidth]{figures/Data/flood counts 2010-2019.png}
+    
+    \caption*{\raggedright\textit{Note}: The figure depicts the map of historical flood events occurred during the 2010-2019 period by municipal areas. Overseas France is not shown.}
+    \end{figure}
+
+
+
+Figure~\ref{fig:flood_map} shows the number of flood-related Cat-Nat decrees issued between 2010 and 2019 across French communes. The spatial pattern is far from random: some regions are repeatedly exposed, while others never. Yet this variation reflects more than hydrological chance since firms and workers do not locate randomly. Some avoid naturally flood-prone lands, while others cluster in economically thriving river basins where defenses are stronger and infrastructure more reliable. As a result, observed flood exposure and economic activity may co-move not because floods reduce economic activity, but because productive firms and households sort into areas that are simultaneously high-risk and high-return. Figure~\ref{fig:risk_econ_acti} therefore plots several measures of exposure to flooding and economic activity at the commune level to illustrate how flood risk correlates with covariates relevant for firm outcomes. These maps provide a descriptive overview, not a causal claim, but they highlight a central challenge: flooded and non-flooded communes differ systematically in ways that can confound naïve comparisons. For example, \citet{jia2022expecting} show that sorting of firms and workers into flood-prone areas is an important channel through which flood risk shapes long-run economic outcomes.
+
+In France, a growing body of work shows that natural disaster decrees reflect social and institutional factors as much as hydrology \citep{CHELLE20251, morvan2022municipalities, grislain2018natural, boissier2013mortalite, bezy2023incidence}. For instance, \citet{CHELLE20251} document large disparities in Cat-Nat and PPRI coverage across communes, correlated with income and local governance capacity: some high-risk communes with low economic activity remain excluded from formal protection, while others benefit from overlapping schemes. On the one hand, these discrepancies raise fundamental questions of equity and consistency in the distribution of climate risk and adaptation measures, highlighting the distributional dimension of flood policy. On the other hand, they underscore the need for careful identification strategies when measuring the impacts of flooding. As \citet{lemoine2018estimating} argue, certain adaptive responses can be observed and controlled for empirically, while others remain latent. Building on this, \citet{carleton2024adaptation} stress that both ex-ante and ex-post adaptation shape the observed impact of climate shocks, underscoring the importance of accounting for anticipatory behavior when interpreting flood effects on firms.
+
+
+
+% cite{lethimillock, bezy2023incidence}
+%To estimate causal effects, we must compare units that are plausibly similar in their ex-ante vulnerability and adaptive capacity—both on the extensive margin (whether a flood occurred) and the intensive margin (how severe it was). 
+
+%This spatial pattern suggests that economic activity is not randomly distributed with respect to flood risk, reinforcing the need to control for baseline exposure and potential sorting when estimating the causal impacts of flood events.
+
+%%%%% Figure: Flood Risk and Economic Activity
+\begin{figure}[htbp]
+  \centering
+  \caption{\textbf{Figure \ref{fig:risk_econ_acti}:} Distrtibutiton of economic acivity in face of flood risk in France}
+    \label{fig:risk_econ_acti}
+    
+  % First row
+  \begin{subfigure}[b]{0.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Data/Jobs.png}
+    \subcaption{Number of jobs}
+    \label{fig:image4}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Data/Population density.png}
+    \subcaption{Population density}
+    \label{fig:image5}
+  \end{subfigure}
+
+  \vspace{0.8em}
+
+  % Second row
+  \begin{subfigure}[b]{0.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Data/EAIP Share.png}
+    \subcaption{Share of establishments covered by EAIP}
+    \label{fig:eaip_map}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Data/Risk Index.png}
+    \subcaption{Flood Risk Index}
+    \label{fig:risk_index}
+  \end{subfigure}
+
+\vspace{0.8em}
+   % Third row
+  \begin{subfigure}[b]{0.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Data/Raster unbinned main.png}
+    \subcaption{Floodplain map (RP100)}
+    \label{fig:Raster unbinned main}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.454\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Data/Flood counts 2000-2020.png}
+    \subcaption{Flood map (2000-2020)}
+    \label{fig:map_flood_2020}
+  \end{subfigure}
+
+    
+    %\raggedright\textit{Note}: The spatial association between flood exposure and economic characteristics could alternatively be evidenced by plotting the fitted values obtained regressing key commune-level covariates against the flood risk index RP100 or the amount of historical floods in a commune. The observed correlation would not be causal because firms choose where to operate in part based on perceived risk and protection, and because key factors such as insurance coverage, infrastructure resilience, or access to credit are themselves functions of local conditions that precede any observed flood.
+
+\end{figure}
+%%%%% 
+
+
+
+
+
+
+\begin{comment}
+ For example, the \cite{CourDesComptes2022} notes to a subsantail insurance gap and insufficient preparatin and much damamge coul dhave ben avoided. France’s financial regulatory authority which exercises prudential supervision of regulated French financial firms such as banks and insurance companies also recently (2023/2024) run a pilot test with the aim to measuring the impact of climate change on the solvency of insurance undertakings and they say that under an aggressive “late action” scenario—where carbon pricing is deferred until 2030—fully one-third of French insurers would see their solvency ratios fall below regulatory minima by 2035, with median capital buffers eroded by over 25\% and several large mutuals facing recapitalization needs in excess of €10 billion \citep{ACPR2024ClimateStressTest}. Always, at the french natioanl level \citep{pisani2023economic} recent report on France’s climate resilience highlights that even a moderate 2 °C temperature rise could reduce French GDP by up to 7 \% and impose adaptation costs exceeding €150 billion by mid‐century. 
+ 
+\end{comment}
+
+
+
+%and today approximately  \href{https://www.georisques.gouv.fr/minformer-sur-la-prevention-des-risques/les-risques-naturels-en-france-chiffres-cles#:~:text=Plus%20de%2012%20500%20communes,pr%C3%A9vention%20Inondation%20(hors%20submersion%20marine)}{74,4\%} of the French population lives in a commune covered by PPRI. It is good to publish statistics such as \href{https://www.georisques.gouv.fr/minformer-sur-la-prevention-des-risques/les-risques-naturels-en-france-chiffres-cles}{chiffres clees} to sensibilise people. 
+
+
+
+
+
+
+
+
+

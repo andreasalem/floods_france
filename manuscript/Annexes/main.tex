@@ -1,0 +1,160 @@
+\chapter*{\LARGE Appendices}
+
+
+\addcontentsline{toc}{chapter}{Appendices}
+% Temporarily adjust tocdepth so sections do not appear in the main TOC
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+\renewcommand{\thesection}{\Alph{section}}
+\adjustmtc 
+% mini table of contents for appendices
+\minitoc
+% Restore normal tocdepth for sections within the appendices
+\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Data descriptions and variable creation details}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+This section details how the data used in this paper was collected and processed. I describe in turn the data sources mentioned in Table \ref{tab:data_sources}. The codebook (Table \ref{tab:codebook}) serves as further reference.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{GASPAR Database}
+
+In the raw GASPAR database, each row corresponds to a single hazard clause of a natural catastrophe decree published in the \textit{Journal Officiel}—that is, one commune, one hazard, and one time window. Each decree is identified by a unique code CatNat, but when multiple hazards are recognized within the same decree (e.g. both flooding and landslides), the identifier is repeated, generating one row per hazard. As a result, raw counts of code CatNat overstate the number of distinct events. To avoid this double-counting, I collapse the data to the commune × hazard × calendar-year level, treating all rows that share these three keys as a single disaster episode within a commune. The resulting event counts are reported in Table \ref{tab:flood_summary}. Figure \ref{fig:durat_categories} plots the distribution of durations for all recorded flood events, which serves as the basis for defining my three categories of flood intensity. \\
+%It would be interesting to plot here trend in GASPAR CatNat and Floods CatNats, disuss how this could be biased. i alrady did that graph.
+
+
+  \begin{figure}[htbp]
+    \centering
+    \caption{\textbf{Figure \ref{fig:durat_categories}:}  Distribution of flood event durations}
+    \label{fig:durat_categories}
+    \includegraphics[width=0.9\textwidth]{figures/Data/duration_flood_gaspar.png}
+
+    %\caption*{\raggedright\textit{Note}:}
+    
+    \end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Long Term Flood Exposure Index}
+\label{ch:appendix_risk_index}
+\input{Annexes/Risk Index}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Propensity Score}
+\label{ch:pscore_appendix}
+\input{Annexes/Propensity Score}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\section{Additional empirical results}
+\label{sec:appendix_empirical}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\input{tables/Table Coefficients All}
+
+
+% EVENT STUDY GRAPHS all outcomes
+\begin{figure}[htbp]
+  \centering
+  \caption{\textbf{Figure \ref{fig:firms_extra_results}:} Impact of floods on firms outcomes - Additional outcomes}
+  \label{fig:firms_extra_results}
+  
+  \begin{subfigure}[t]{0.47\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Results/Analysis_Firms/share_CDD_weighted.png}
+    \subcaption{\textbf{Share of temporary contracts}}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.47\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Results/Analysis_Firms/ETP.png}
+    \subcaption{\textbf{FTE Employment}}
+  \end{subfigure}
+
+  \vspace{0.8em}
+
+  % Second row
+
+  \begin{subfigure}[t]{0.47\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Results/Analysis_Firms/HWAGE.png}
+    \subcaption{\textbf{Hourly Wage}}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.47\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Results/Analysis_Firms/HOURS.png}
+    \subcaption{\textbf{Hours}}
+  \end{subfigure}
+
+    \vspace{0.8em}
+
+  % Third row
+\begin{subfigure}[t]{0.47\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Results/Analysis_Firms/redi_310_weighted.png}
+    \subcaption{\textbf{Total Tunover (Revenue)}}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.47\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Results/Analysis_Firms/319 profits.png}
+    \subcaption{\textbf{Gross Profit before tax}}
+  \end{subfigure}
+
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\section{Additional tables}
+\label{sec:appendix_tables}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Table - Flood Events count
+\input{tables/flood_events_table}
+
+
+% Table: Flood counts 2000-2020
+% \input{tables/floods_counts}
+
+
+% Table: Flood counts 2010-2019
+\vspace{1cm}
+\input{tables/flood_counts_2010_2019}
+
+% Table: SIRET YEARS
+\input{tables/table_siret_years}
+
+
+% Table - LOnger results
+%\input{tables/Main results long table}
+
+
+
+
+
+
+
+%\subsection{Establishment-level data}
+
+
+%\section{Robustness Checks}
+
+
+\input{tables/codebook}

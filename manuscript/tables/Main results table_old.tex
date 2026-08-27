@@ -1,0 +1,27 @@
+\begin{table}[htbp]\centering
+\caption{\textbf{Table \ref{tab:lpdid_pooled}}: Local-Projection DiD — Pooled Coefficients}
+\label{tab:lpdid_pooled}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{l*{3}{c}}
+\toprule
+               &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
+               &  \textbf{Employment}  &  Wages  &  CDI \\[-0.3em]
+               &  \footnotesize{Total headcount at 31.12} & \footnotesize{Average wage at 31.12} & \footnotesize{Share of permanent contracts} \\ 
+\midrule
+\textit{Pre} coefficient      &  \num{0.0109}     & \num{-167.9653}\sym{***} & \num{0.0016} \\
+                              &  (0.0300)         & (39.3618)                 & (0.0013)     \\
+\textit{Post} coefficient     &  \num{-0.1497}\sym{**} & \num{-233.6222}\sym{***} & \num{0.0055}\sym{**} \\
+                              &  (0.0629)         & (77.5715)                 & (0.0026)     \\[0.4em]
+Observations                  &  396{,}994        & 357{,}851                 & 394{,}378    \\
+\midrule
+Commune fixed effects         & \checkmark & \checkmark & \checkmark \\
+Year fixed effects            & \checkmark & \checkmark \checkmark \\
+Département $\times$ Year FE  & \checkmark & \checkmark & \checkmark \\
+Flood-history controls        & \checkmark & \checkmark & \checkmark \\
+\bottomrule
+\multicolumn{4}{p{12cm}}{\footnotesize
+\textit{Notes:} Each column reports pooled LP-DiD “Pre” (mean of $k=-5\dots-2$) and “Post” (mean of $k=0\dots5$) coefficients.  
+Robust standard errors clustered at the commune (\texttt{INSEE\_COM}) level in parentheses.  
+\sym{*} $p<0.10$, \sym{**} $p<0.05$, \sym{***} $p<0.01$.}
+\end{tabular}
+\end{table}

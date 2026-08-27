@@ -1,0 +1,53 @@
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Table \ref{tab:stacked_es_employment_wages}:} \textsc{Stacked Event Study Estimates for Employment and Wages}}
+\label{tab:stacked_es_employment_wages}
+
+
+\resizebox{16cm}{!}{
+\begin{tabular}{@{\extracolsep{6pt}}p{6.5cm}cccc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+& \multicolumn{4}{c}{\textit{Dependent variable:}} \\
+\cline{2-5}
+\\[-1.8ex] 
+& \multicolumn{2}{c}{Headcount 31.12} & \multicolumn{2}{c}{Average wage at 31.12} \\
+& (1) & (2) & (1) & (2) \\
+\hline \\[-1.8ex]
+\textbf{A. Post-Treatment Average Effect} \\[0.15em]
+Treated $\times$ Post & $-$0.071 & $-$0.150$^{**}$ & $-$135.01$^{***}$ & $-$233.62$^{***}$ \\
+                            & (0.045)  & (0.063)         & (41.98)           & (77.57)           \\[0.3em]
+
+\textbf{B. Event-Study Estimates} \\[0.15em]
+Treated $\times$ Event-time, $-5$ & $-$0.028 & $-$0.031 & $-$48.52 & $-$16.83 \\
+                                 & (0.021)  & (0.033)  & (31.91)  & (48.47)  \\[0.15em]
+Treated $\times$ Event-time, $-4$ & 0.008    & 0.027    & $-$52.54$^{**}$ & $-$40.41 \\
+                                 & (0.015)  & (0.027)  & (26.37)  & (42.21)  \\[0.15em]
+Treated $\times$ Event-time, $-3$ & $-$0.013 & 0.015    & 17.24    & $-$33.38 \\
+                                 & (0.014)  & (0.019)  & (25.30)  & (37.73)  \\[0.15em]
+Treated $\times$ Event-time, $-2$ & $-$0.013 & $-$0.004 & $-$2.72  & $-$45.89 \\
+                                 & (0.013)  & (0.016)  & (25.38)  & (37.39)  \\[0.15em]
+Treated $\times$ Event-time, $\phantom{-} 0$  & $-$0.083$^{***}$ & $-$0.169$^{***}$ & $-$186.67$^{***}$ & $-$214.19$^{***}$ \\
+                                 & (0.020)         & (0.040)         & (19.88)         & (30.07) \\[0.15em]
+Treated $\times$ Event-time, $+1$ & $-$0.114$^{***}$ & $-$0.230$^{***}$ & $-$122.83$^{***}$ & $-$268.61$^{***}$ \\
+                                 & (0.036)         & (0.055)         & (27.40)         & (49.05) \\[0.15em]
+Treated $\times$ Event-time, $+2$ & $-$0.057$^{*}$   & $-$0.088$^{*}$   & $-$186.74$^{***}$ & $-$236.09$^{***}$ \\
+                                 & (0.029)         & (0.045)         & (27.62)         & (62.64) \\[0.15em]
+Treated $\times$ Event-time, $+3$ & $-$0.216$^{***}$ & $-$0.144$^{***}$ & $-$165.92$^{***}$ & $-$185.56$^{***}$ \\
+                                 & (0.042)         & (0.055)         & (31.77)         & (65.99) \\[0.15em]
+Treated $\times$ Event-time, $+4$ & $-$0.132$^{***}$ & $-$0.163$^{***}$ & $-$180.45$^{***}$ & $-$202.26$^{***}$ \\
+                                 & (0.034)         & (0.056)         & (38.06)         & (69.77) \\[0.15em]
+Treated $\times$ Event-time, $+5$ & $-$0.124$^{**}$  & $-$0.176$^{**}$  & $-$84.79$^{*}$    & $-$187.39$^{**}$  \\
+                                 & (0.056)         & (0.082)         & (47.21)         & (80.31) \\[0.35em]
+
+
+\hline \\[-1.8ex]
+Total observations                & 6.82M & 6.82M & 6.82M & 6.82M \\
+Variance weighted (stacked) weights               & Yes    & Yes   & Yes    & Yes   \\
+ATT weights               & No    & Yes   & No    & Yes   \\
+Fixed effects               & Yes   & Yes   & Yes   & Yes   \\
+\hline
+\hline \\[-1.8ex]
+\multicolumn{5}{p{17cm}}{\textit{Note:} Model 1 and Model 2 in parenthesis indicate regression without and with ATT weights, respectively. $^{*}p<0.1$; $^{**}p<0.05$; $^{***}p<0.01$. Event time $-1$ omitted (reference period).}
+\end{tabular}}
+\end{table}

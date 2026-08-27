@@ -1,0 +1,43 @@
+\begin{table}[!htbp] 
+\centering 
+\caption{\textbf{Table \ref{tab:pscore_logit}:} \textsc{Propensity-score logit for extreme floods (2010–2019)}} 
+\label{tab:pscore_logit}
+
+ \resizebox{12cm}{!}{
+\begin{tabular}{@{\extracolsep{6pt}}p{8cm} c} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+& \textit{Dependent variable:}\\ 
+\cline{2-2} 
+\\[-1.8ex] & Extreme-flood dummy\\ 
+\hline \\[-1.8ex] 
+Flood–risk-group decile            & 0.160$^{***}$ \\ 
+                                   & (0.029)        \\[0.15em]
+
+Share of establishments under EAIP & 0.219          \\ 
+                                   & (0.280)        \\[0.15em]
+
+Income category of commune         & 0.0334         \\ 
+                                   & (0.088)        \\[0.15em]
+
+Urban dummy                        & 0.456$^{***}$  \\ 
+                                   & (0.073)        \\[0.15em]
+
+Coastal dummy (littoral sea)       & 0.908$^{***}$  \\ 
+                                   & (0.127)        \\[0.15em]
+
+Floods 1982–1999 (count)           & $-$0.118$^{***}$ \\ 
+                                   & (0.044)        \\[0.15em]
+
+Constant                           & $-$3.476$^{***}$ \\ 
+                                   & (0.206)        \\[0.35em]
+\hline \\[-1.8ex] 
+Observations                       & 6,676,631       \\ 
+Wald $\chi^2$(6)                   & 178.33          \\ 
+Pseudo R$^2$                       & 0.0293          \\ 
+Log pseudolikelihood               & $-$1,564,659.3  \\ 
+\hline 
+\hline \\[-1.8ex] 
+\multicolumn{2}{p{13cm}}{\textit{Note:} $^{*}p<$0.1; $^{**}p<$0.05; $^{***}p<$0.01. Robust standard errors clustered at the commune level. Coastal dummy includes only sea-type areas (89\% of cases). Interestingly, the coefficient for floods occurring in 1982–1999 is negative, possibly indicating that adaptation to flooding has taken place in communes more heavily exposed in the past, now resulting in fewer CatNat declarations.} \\ 
+\end{tabular}}
+\end{table}

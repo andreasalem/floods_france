@@ -1,0 +1,85 @@
+\begin{landscape}
+\scriptsize
+\begin{ThreePartTable}
+\begin{TableNotes}[flushleft]\footnotesize
+%\item \textit{Note:} PCS-based variables are constructed by .
+\end{TableNotes}
+
+\begin{longtable}{@{}p{9cm}p{9cm}@{}}
+\caption{\textbf{Table \ref{tab:codebook}:} Variable Codebook, FARE-FICUS and DADS}\label{tab:codebook}\\
+\toprule
+\textbf{Variable} & \textbf{Description} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{l}{\textbf{(Continued)}}\\
+\toprule
+\textbf{Variable} & \textbf{Description} \\
+\midrule
+\endhead
+
+\bottomrule
+\insertTableNotes
+\endlastfoot
+
+% --- FARE–FICUS ---
+\multicolumn{2}{l}{\textit{FARE–FICUS dataset}}\\[0.2em]
+\texttt{SIREN}            & Legal-unit identifier\\
+\texttt{ANNEE}            & Calendar year\\
+\texttt{depcom}           & Commune code (head office)\\
+\texttt{ape\_diff}        & Main activity (NAF Rev. 1)\\
+\texttt{r004}             & VAHT – IMPOTAX + SUBVEXP (value added)\\
+\texttt{redi\_e001}       & Headcount on 31 Dec\\
+\texttt{redi\_e200}       & Average salaried headcount (EFFSALM)\\
+\texttt{redi\_r310}       & Total turnover (CATOTAL)\\
+\texttt{redi\_r216}       & Wages and salaries (SALTRAI)\\
+\texttt{b319}             & Current gross profit before tax (PBCAI)\\
+\texttt{b330}             & Loans and related debts (EMPDETT)\\
+\texttt{CAPISOC}          & Share capital\\
+\texttt{VAHT}             & Value added excl. tax\\
+\texttt{IMPOTAX}          & Taxes and duties\\
+\texttt{SUBVEXP}          & Operating subsidies\\[0.5em]
+
+% --- DADS ---
+\multicolumn{2}{l}{\textit{DADS dataset}}\\[0.2em]
+\texttt{YEAR}             & Calendar year\\
+\texttt{SIREN}            & Legal-unit identifier\\
+\texttt{SIRET}            & Establishment identifier\\
+\texttt{ZEMPT}            & Employment-zone code\\
+\texttt{Code\_commune}    & INSEE commune code (establishment)\\[0.5em]
+
+% --- PCS aggregates ---
+\multicolumn{2}{l}{\textit{PCS-based aggregates (available by socio-professional category)}}\\[0.2em]
+\texttt{EFF\_ALL}         & Total salaried employment\\
+\texttt{HOURS}            & Total hours worked\\
+\texttt{HWAGE}            & Mean hourly wage\\
+\texttt{AVGWAGE}          & Mean annual wage\\
+\texttt{ETP}              & Full-time equivalents\\
+\texttt{EFF\_3112}        & Headcount on 31 Dec (establishment level)\\ [0.5em]
+
+% --- Employment dynamics ---
+\multicolumn{2}{l}{\textit{Employment dynamics}}\\[0.2em]
+\texttt{HIRES}            & Hires during year\\
+\texttt{HIRES2}           & Alternative hires definition\\
+\texttt{SEPARATIONS}      & Separations during year\\[0.5em]
+
+% --- Contract shares ---
+\multicolumn{2}{l}{\textit{Contract-type shares}}\\[0.2em]
+\texttt{CDI}              & Share of open-ended contracts\\
+\texttt{CDD}              & Share of fixed-term contracts\\
+\texttt{interim}          & Share of temporary-agency contracts\\
+\texttt{othercontract}    & Share of other contract types\\[0.5em]
+
+% --- Short contracts ---
+\multicolumn{2}{l}{\textit{Job spell by duration}}\\[0.2em]
+\texttt{SHORTJOB\_1M}     & $\leq$ 1 month\\
+\texttt{SHORTJOB\_3M}     & $\leq$ 3 months\\
+\texttt{SHORTJOB\_6M}     & $\leq$ 6 months\\
+\texttt{SHORTJOB\_LTO3M}  & $<$ 3 months\\
+\texttt{SHORTJOB\_3TO6M}  & 3–6 months\\
+\texttt{SHORTJOB\_6TO12M} & 6–12 months\\
+\texttt{SHORTJOB\_MORE6M} & $>$ 6 months\\
+\texttt{SHORTJOB\_MORE1Y} & $>$ 1 year\\
+
+\end{longtable}
+\end{ThreePartTable}
+\end{landscape}

@@ -1,0 +1,147 @@
+
+\chapter{Empirical strategy}
+\label{ch: empirical_strategy}
+
+
+% (not to mention anticipation effects, and spatial spillovers, as flood exposure is also endogenous, shaped by geography and the amount of private or public adaptation investments). 
+
+Following the institutional setting of the natural catastrophe declaration mechanism in France, I exploit the staggered arrival of floods recognised under the \textit{CatNat} scheme to identify their dynamic effects on establishments. Estimating flood impacts is complicated by staggered timing and multiple treatments. Because traditional TWFEs DiDs estimators suffer from negative weighting issues in settings with dynamic and heterogeneous treatment effects, to address these issues,  I follow the approach of \cite{wing2024stacked} and construct a matched ``clean control" stacked panel in the spirit of the local projection DiDs (LP-DiD) estimator proposed in \cite{dube2023local}. The LP-DiD estimator has been used in recent disaster work such as \citet{roth2020local}, \citet{gallagher2024natural}, and \citet{castro2024weathering}. This framework also allows for a \textit{non-absorbing} treatment. Non-absorbing specifications treat each flood as a separate, non-permanent shock and are therefore attractive when effects are truly linear and short-lived. Because in our setting lingering effects are likely, I ultimately adopt an absorbing specification. I focus on the first CatNat flood experienced by each establishment during 2010–2019 and measure the impact of \textit{becoming} a flooded establishment.
+
+
+\section{Establishment level}
+
+Let $i$ index establishments and $t\in\{2010,\dots,2019\}$. Define $T_i$ as the calendar year of the first \textit{CatNat} flood at $i$ and set the absorbing treatment indicator
+$D_{it}$ equal one only in the event year $t$ such that $t-T_i=k$, where the omitted category is $k=-1$. Stacking a $\pm5$‑year window around $T_i$, I estimate for each
+$h\in\{-5,\dots,-2,0,\dots,5\}$:
+\begin{align*}
+\Delta_h Y_{it}
+&=\sum_{k=-5,k\neq-1}^{5}\beta_k\,
+      \mathbbm 1\{t-T_i=k\}
+  +X_{it}'\theta_h
+  +\alpha_{g(i)s(i)}
+  +\lambda_{g(i)s(i)}t
+  +\lambda_{g(i)}t
+  +\lambda_{s(i)}t
+  +\delta_t^{(h)}
+  +\varepsilon_{it}^{(h)},       
+\end{align*}
+where the dependent variable $\Delta_h Y_{it}=Y_{i,t+h}-Y_{i,t-1}$ is a long difference that removes permanent establishment heterogeneity. At every horizon, treated units are compared only to units that are guaranteed to remain untreated over the relevant window. Treated rows therefore consist of establishments that newly flood in year $t$, while ``clean" comparisons are units with no floods in $t-1$, $t$, or the comparison year $t+h$. Establishments flooded earlier than $t-1$ or between $t+1$ and $t+h$ are dropped for that horizon, ensuring that controls are never contaminated by own treatment, ensuring all positive regression weights. The resulting coefficients $\hat\beta_k$’s are interpreted as horizon-specific average treatment effects and trace an impulse-response function in event time. Leads ($k<0$) provide a direct visual test of the parallel-trends assumption. Lags ($k\ge 0$) reveal the dynamic profile of outcomes in the aftermath of the flood. In this guide, the LP-DiD estimator is numerically equivalent to the stacked-DiD estimator in \cite{wing2024stacked}.
+
+Identification relies on the absence of pre-trends within finely defined risk–industry cells. To that end I absorb a full set of risk-group $\times$ industry fixed effects ($\alpha_{g(i)s(i)}$) and allow for three orthogonal linear trends: a group-by-industry trend $\lambda_{g(i)s(i)}t$, a pure group trend $\lambda_{g(i)}t$, and an industry trend $\lambda_{s(i)}t$. A horizon-specific calendar-year effect $\delta_t^{(h)}$ nets out macro shocks that differ across $h$. In line with \cite{patel2023floods} and \cite{hussain2024flooding} I build a control vector $\mathbf X_{it}$ containing rolling counts of floods in the previous three, five, and ten years, and a variables "years since flooding", soaking up lingering damage from earlier events, and I restrict the estimation sample to establishments that never flooded between 2000 and 2009, yielding a clean pre-treatments baseline. Standard errors are heteroskedasticity-robust and clustered at the unit level (establishments) to account for duplication, in accordance with the stacked DiDs literature.
+
+
+
+
+
+
+\begin{comment}
+LP-DiD stacks windows around each first flood, avoiding
+negative-weight bias and delivering horizon-by-horizon impulse-response
+functions.
+In its baseline form it is equivalent to the stacked-DiD approach
+of \citet{cengiz2019effect}.
+Illustrative applications include \citet{roth2020local},
+\citet{gallagher2024natural} and \citet{castro2024weathering}.
+
+In the non-absorbing variant,
+\citet{dube2023local} show that identification requires
+multiple, \emph{fully dissipated} shocks.
+Because lingering effects are plausible beyond two years,
+we adopt the absorbing treatment.
+
+\paragraph{1.1 Long-difference outcome (LP step).}
+For each horizon $h$ (−5 … −2, 0 … 5) the dependent variable is
+$Y_{i,t+h}-Y_{i,t-1}$: the change from one year \emph{before} the flood
+to $h$ years after (or before) the flood.
+
+\paragraph{1.2 Key regressor: “newly-treated’’ dummy.}
+$\Delta D_{it}=D_{it}-D_{i,t-1}=1$ if—and only if—
+establishment $i$ encounters its \textit{first} CatNat flood in year $t$.
+
+\paragraph{1.3 Who is $T$ and who is $C$ at horizon $h$?}
+\begin{itemize}
+  \item \textbf{Treated rows ($T$):} $\Delta D_{it}=1$.
+  \item \textbf{Clean controls ($C$):} units with $D_{i,t-1}=D_{i,t+h}=0$.
+  \item Units flooded earlier or between $t+1$ and $t+h$ are dropped,
+        preventing them from acting as controls.
+\end{itemize}
+
+\paragraph{1.4 Controls and absorbed effects.}
+We add (i) four flood-history controls,
+(ii) flood-risk-group $\times$ industry fixed effects,
+and (iii) their group-specific linear trends.
+A horizon-specific calendar-year effect $\delta_t^{(h)}$ absorbs
+aggregate shocks.
+
+\paragraph{1.5 Coefficient interpretation.}
+Each $\beta_k$ is the average difference in the long-difference outcome
+between newly flooded firms and their clean controls, relative to the
+baseline year $k=-1$.
+Because controls are never previously or subsequently flooded,
+all weights are positive and the usual TWFE bias is avoided.
+\end{comment}
+
+
+To improve covariate balance, I further compute $\text{ATT}$‑type weights and report estimamtes with and without these additional weights that are put on top of the LP-DID's variance-weighted average of cohort-specific ATTs. To do this, I first estimate a propensity score for being hit by extreme flooding with a simple logistic regression model of the form:
+
+\begin{equation*}
+\Pr\!\bigl(D_{it}=1 \,\big|\, X_i\bigr)=
+\Phi\!\Bigl(\alpha\,X_{i}\Bigr)
+\end{equation*}
+
+Table \ref{tab:pscore_logit} reports the result from the above logistic regression. The distribution of the propensity score without and with weights is shown in Figure \ref{fig:pscore_distr}. As it can be seen in Figure \ref{fig:ps_cov_balance} the balance of covariates is improved. I choose not to match on the propensity score, as matching would restrict the sample by dropping some treated observations and would shift the estimand from the ATT for all treated firms to the ATT for a smaller, selected subset. My weighted estimator preserves the full set of treated firms and avoids this loss of external validity. I however restrict the sample to the common support area, effectively dropping 2.12\% of the sample, to improve internal validity.
+
+
+\section{Commune level}
+
+%-----------------------------------------------------------------------
+
+The impact of flooding can vary based on the level of observation. While aggregate statistics may show signs of recovery or even growth after a disaster, this can be misleading because establishment‑level losses can be masked by reallocation toward unaffected areas: some establishments are severely flooded and decline or close, while others—less affected or even unaffected—expand and absorb displaced activity. This compositional change can make the region look healthy overall, even if many individual establishments suffer lasting losses. \cite{erda2024disasters} indeed documents a less dispersion in the marginal product of plant capital, indicating that flooding can cause an efficient reallocation of capital and labour. To investigate the impact of flooding on aggregate outcomes, I repeat the design described above at the commune level, with the specification for each horizon $h$:
+
+%Hence the importance to investigate the impact of floods at both the micro and aggregate level ensuring not to overstate resilinece to flooding and avoid wrong narratives of resilience or recovery. To take into account spill‑overs
+
+\begin{align*}
+\Delta_h Y_{ct}
+=\sum_{k=-5,k\neq-1}^{5}\gamma_k\,
+   \mathbbm 1\{t-T_c=k\}
+  +Z_{ct}'\pi_h
+  +\eta_{q(c)t}
+  +\delta_t^{(h)}
+  +\upsilon_{ct}^{(h)},                                   \label{eq:commune}
+\end{align*}
+
+
+Let $c$ index communes and define
+$q(c)\in\{\textit{littoral}\}\times\{\textit{urban}\}\times\{\textit{income}\}$
+(the cross of coastality, urban status, and income tercile). $\Delta_h Y_{ct}=Y_{c,t+h}-Y_{c,t-1}$ and
+$\eta_{q(c)t}$ saturate stratum$\times$year fixed effects.
+Standard errors cluster at the commune level. I further estimate the equation above inside each stratum -- coastal versus inland, urban versus rural, rich versus poor commune -- unless fewer than twenty treated communes are available.
+
+
+\begin{comment}
+
+\begin{itemize}
+    \item If a firm is created into a commune that experienced flooding in the past, the firm will not be considered flooded last year. This is to keep in mind.
+\end{itemize}
+
+\textbf{Selecting a treatment and contol group:} Before resorting to propensity‑score matching, begin by comparing flooded firms with control firms located in areas that are equally exposed to flood risk but happened not to be hit in the event year. Run two quick diagnostics on that “at‑risk‑only” sample: (i) a balance table for pre‑shock covariates such as size, leverage, and lagged outcomes, and (ii) an event‑study chart showing the pre‑treatment coefficients. If standardized mean differences are below conventional thresholds and the pre‑period coefficients are flat and insignificant, the controls are already comparable, so the main estimates are credible without further adjustment. In that case, applying propensity‑score matching or inverse‑probability weighting becomes a robustness check: it should leave the post‑shock effects virtually unchanged, perhaps tightening confidence intervals by trimming poorly matched observations. If, however, either the balance table or the pre‑trends reveal residual differences, matching is essential to restore comparability and satisfy the parallel‑trends assumption.
+
+\end{comment}
+
+
+\begin{comment}
+\begin{verbatim}
+    lpdid `var', time(ANNEE) unit(SIRET) treat(flood_dummy_extreme) ///
+          pre(5) post(5) controls(`controls') ///
+          absorb(i.flood_risk_group#i.Section##c.ANNEE) ///
+          cluster(SIRET) ///
+          weights
+
+          Outcomes: \texttt{ETP}, \texttt{EFF\_3112}, hourly wage,
+\texttt{AVGWAGE\_3112}, contract shares (\texttt{share\_CDD},
+\texttt{share\_CDI}), value added (\texttt{redi\_r310}),
+profits (\texttt{b330}) and liabilities (\texttt{r004}).
+\end{verbatim}
+\end{comment}
+
+

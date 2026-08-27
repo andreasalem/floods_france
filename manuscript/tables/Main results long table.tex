@@ -1,0 +1,45 @@
+\begin{table}[!htbp]
+\centering
+\caption{\textbf{Table \ref{tab:lpdid_results}:} \textsc{OLD TABLE -- LP-DiD event-study estimates with bin-level observations}}
+\label{tab:lpdid_results}
+
+\resizebox{14.5cm}{!}{
+\begin{tabular}{@{\extracolsep{6pt}}p{8cm}ccr}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+& \multicolumn{2}{c}{\textit{Dependent variable:}} & \\
+\cline{2-3}
+\\[-1.8ex] & EFF\_3112 (Employment) & AVGWAGE\_3112 (Wages) & Obs (bin) \\
+\hline \\[-1.8ex]
+Event time $-5$ & $-$0.031 & $-$16.83 & 521,227 \\
+                & (0.033)  & (48.47)  &         \\[0.15em]
+Event time $-4$ & 0.027    & $-$40.41 & 650,620 \\
+                & (0.027)  & (42.21)  &         \\[0.15em]
+Event time $-3$ & 0.015    & $-$33.38 & 794,878 \\
+                & (0.019)  & (37.73)  &         \\[0.15em]
+Event time $-2$ & $-$0.004 & $-$45.89 & 989,096 \\
+                & (0.016)  & (37.39)  &         \\[0.15em]
+Event time $-1$ & 0 (reference) & 0 (reference) & -- \\ [0.15em]
+Event time $0$  & $-$0.169$^{***}$ & $-$214.19$^{***}$ & 1,369,029 \\
+                & (0.040)         & (30.07)            &            \\[0.15em]
+Event time $1$  & $-$0.230$^{***}$ & $-$268.61$^{***}$ & 807,004 \\
+                & (0.055)         & (49.05)            &         \\[0.15em]
+Event time $2$  & $-$0.088$^{*}$   & $-$236.09$^{***}$ & 585,341 \\
+                & (0.045)         & (62.64)            &         \\[0.15em]
+Event time $3$  & $-$0.144$^{***}$ & $-$185.56$^{***}$ & 442,005 \\
+                & (0.055)         & (65.99)            &         \\[0.15em]
+Event time $4$  & $-$0.163$^{***}$ & $-$202.26$^{***}$ & 322,004 \\
+                & (0.056)         & (69.77)            &         \\[0.15em]
+Event time $5$  & $-$0.176$^{**}$  & $-$187.39$^{**}$  & 224,432 \\
+                & (0.082)         & (80.31)            &         \\[0.35em]
+
+\hline \\[-1.8ex]
+Total observations     & 1,369,029 & 1,237,240 & -- \\
+Mean per bin           & 676,977   & 608,899   & -- \\
+\hline
+\hline \\[-1.8ex]
+\multicolumn{4}{p{17cm}}{\textit{Note:} Cluster-robust standard errors (at the INSEE\_COM level) in parentheses. $^{*}p<0.1$; $^{**}p<0.05$; $^{***}p<0.01$. Event time $-1$ is the omitted reference category.} \\[0.6em]
+
+\multicolumn{4}{p{17cm}}{\texttt{lpdid(Y, unit = SIRET, time = ANNEE, treat = flood\_dummy\_extreme, pre\_window = 5, post\_window = 5, controls = c(floods\_last\_10y, floods\_last\_5y, floods\_last\_3y, years\_since\_last\_flood), cluster = INSEE\_COM, absorb = i.flood\_risk\_group\#i.Section\#\#c.ANNEE, weights = w\_att)}}
+\end{tabular}}
+\end{table}

@@ -1,0 +1,55 @@
+\chapter{Data sources}
+\label{ch: data}
+
+I combine several data sources listed in Table~\ref{tab:data_sources} into an unbalanced panel of firms spanning 2010–2019. The dataset includes establishment-level financial and employment information, modeled flood risk measures, administrative records of historical flood events, and demographic characteristics at the commune level. Following \citet{patel2023floods} and \citet{hussain2024flooding}, I apply sample restrictions as part of my empirical strategy and retain only establishments with no recorded flood during the preceding 2000–2009 period. Table~\ref{tab:summary_stats} presents summary statistics for the final sample of establishments. I next describe the main data sources in turn.
+%to construct “dosage” measures of flood exposure 
+
+% Table - Data sources
+\input{tables/data_sources}
+
+
+
+
+\section{Firm and labour market outcomes}
+\label{sec: data_3}
+I use the administrative source DADS-Postes (\textit{Déclarations Annuelles de Données Sociales}), an employer–employee matched dataset covering all employed individuals in France annually since 1995, accessed through the Secure Data Access Center (CASD). Collected by INSEE from mandatory employer filings, the DADS provides rich worker-level information, including age, gender, earnings, hours worked, and occupational category. A key strength of this dataset is the availability of actual hours worked, which allows for the calculation of hourly wages and a more precise measurement of labor inputs. The DADS panel also contains firm-level information (SIREN identifier, sector) and detailed job-spell data (start and end dates, earnings, occupation, and part-time/full-time status).
+
+I match the DADS to firm-level balance sheet data from FICUS and its successor FARE (\textit{Statistique structurelle annuelle d’entreprises}), available for 2008–2019. Compiled by the French tax authority based on mandatory annual financial filings, FARE provides comprehensive accounting information for nearly all firms operating in France. Because the balance sheet data are reported at the firm (SIREN) level, while the DADS are at the establishment (SIRET) level, I allocate each SIRET’s share of its parent firm’s accounts in proportion to the number of full-time equivalent employees it represents within the SIREN. From this, I construct establishment-level measures of key financial indicators such as sales, material costs, and capital expenditures. Additional details on variable definitions and construction are provided in Appendix~\ref{tab:codebook}.
+
+\section{Flood declarations}
+\label{sec: data_1}
+I use data from the publicly available GASPAR database, maintained by the French Ministry of Ecology, to determine the occurrence and timing of flood episodes. This database compiles all decrees (\textit{arrêtés}) issued under the \textit{Catastrophes Naturelles} (CatNat) regime since its creation in 1982. Each decree legally recognizes one or more communes as having experienced a natural disaster, indicating the disaster type, such as flooding  or drought; the start and end dates of the disaster decree, and the date the decree was officially published in the \textit{Journal Officiel}\footnote{A single decree may cover multiple communes and multiple events, each with distinct time windows. Likewise, a single commune may appear multiple times under the same decree if it experienced more than one disaster episode or was affected multiple times on different dates.} thereby entitling eligible parties within the affected communes to compensation through the CatNat insurance mechanism.
+
+Although flood episodes are recorded with precise timing, their spatial resolution is limited to the commune level. In practice, flood damage is highly localized and even neighboring firms may experience different levels of disruption. My coarse commune-level definition of the flood treatment does not permit
+a detailed differentiation among plants which were/were not physically inundated. Assuming that all firms within a disaster-affected commune are equally exposed introduces measurement error and this could bias treatment effect estimates toward zero. To partly address these concerns, in my empirical design I proxy flood intensity with the time elapsed between start and end date of the CatNat decree is used, assigning to each flood episode a discrete intensity scale distinguishing between floods lasting less than 1 day, 1 to 22 days, and at least 23 days. This proxy of flood intensity is useful to disentangle chronic flooding from more extreme ones, which could have differential impacts and drive results. \citet{erda2024disasters} also relies on flood declarations at the county level when aiming to study their impact on firms, which raises similar identification challenges. Her approach is to use capital retirement variables to observe which firms did and did not retire capital in the same year as a flood, employing this as a proxy for being directly affected. Finally, an advantage of the GASPAR database is that it extends back to 1982, allowing the construction of flood history vectors that make it possible to compare firms or communes with similar “flood dosage” and ultimately to define treatment and control groups, a point to which we will return when discussing the empirical strategy of the paper.
+%Another way, would be the use establishment geolocalization, and overlaying them to flooding maps of past floods. 
+
+%Finally, I also retain the type of each flood event, differentiating ``floods and mudslides", ``debris flow", ``tidal wave",... The amounf of damages could also be interesting, but this info not directly avaialble. It would also be desirable to have damage data, however CCR. All this is usefu ukimately to build a flood damage ffunctiion !!
+
+%ALso, firms can be indirectly treated even if not flooded! How to account for this now? I estiamte network estimate paraemter of vertices. If a suplier resposndible with more than 30 percent or otehr way round, then i can add dummy and this can be an extension
+
+\begin{comment}
+
+\textbf{Alternatives to GASPAR-From national level flood episoded to geo-data}: The granularity of the flood episode can range from country level as in the EM-DAT \citep{delforge2025dat}, to lower administrative levels such as in the European HANZE \cite{paprotny2024hanze} specifically on European floods and at NATSU-3 level, where France is ranked third after Italy and Spain as the most more flooded country. However, as far as individual treatment effects (of firm's, for example) are assumed to differ across units, such databases are unsuitable to estimate treatment effects at a granular level or a meaningul institutional level in France, such as zones d'employs.
+In the absence of granular and large scale accounts of floodings such as GASPAR (for criticism of GASPAR see \cite{douvinet2006interets}), an alternative would have been to use even finer spatial data to measure flood extent and depth maps at the pixel level, either building such physical measures with rainfall and wind data and establishing a trenshold to define an extreme event (such as it is done in \cite{bilal2023anticipating} in the case of floods). This could be achieved with C3S or EauFrance. On the other side, various sources of data (such as Copernicus Mapping Service (the one from Moritz) or Dartmouth Flood Observatory (DFO) or Global Flood Database or \href{https://essd.copernicus.org/articles/10/1019/2018/}{DamaGIS database} that goes even futher and breakes down direct damages into type of damage, could be used to have a less coarsen measuer of treatment (ideally, at the firm or worker level). Physical measures are also less prone to bias than human made reports (as noted in \cite{bilal2023anticipating}  and Hasiao 2014). This paragraphs showed that exposure to flooding both at the extensive and intensive margin is not exogenous to a variaty of charactetistics of a firm or location. Thus important to define flooding well! A discussion of the most widespread flood databses and their limitation if found in \cite{patel2023floods}. Another excellent source is the Europen open data \href{https://data.europa.eu/en/publications/datastories/europes-flood-management-navigating-data}{here!}. ALso, historical data on floods is incomplete. Detection technology has improved over time, meaning early floods may be undercounted, introducing measurement error. 
+
+\end{comment}
+
+
+
+\section{Floodplains and flood legislation layers}
+\label{sec: data_2}
+
+Flood hazard maps show the depth, extent, and probability of inundation at any given location under hypothetical flood events of different magnitudes. They capture flood risk \textit{at a given point in time} and help governments and local authorities identify high-risk areas and inform investments in resilience and defense planning. To isolate the impact of floods from other confounding factors, I use the hazard maps from \citet{dottori_et_al_2022} to construct a long-term measure of flood risk. As a baseline indicator of exposure, I rely on the 100-year return period scenario, commonly used in insurance and urban planning, and assume the same risk profile for the full 2010–2019 study period. Specifically, I compute the percentage of each commune’s surface that would be flooded and, for each 100m grid cell, retain the associated water depth. Figure~\ref{fig:raster_flood} in the Appendix shows the floodplain map, while Figure~\ref{fig:risk_index} plots the risk index I construct. Details on the construction of this index are provided in Appendix~\ref{ch:appendix_risk_index}.
+
+Including this time-invariant commune-level variable in my specification improves comparability between treatment and control groups. I stratify the analysis by risk groups and include risk-group fixed effects. Related advances in the construction of long-term flood risk indices are presented in \citet{hussain2024flooding}. To further account for institutional legislation affecting exposure, I use the share of professional establishments within a commune that fall within an EAIP layer. Although partly political in nature—as discussed by \citet{CHELLE20251}—this measure helps increase balance between treatment and control groups.
+
+
+% Table - Summary Statisics
+\input{tables/summary_stats}
+
+
+
+
+
+

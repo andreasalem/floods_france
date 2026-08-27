@@ -1,0 +1,45 @@
+
+\begin{table}[htbp]\centering
+\caption{\textbf{Table \ref{tab:balance_att}:} Covariate balance before and after ATT weighting}
+\label{tab:balance_att}
+
+\begin{threeparttable}
+\footnotesize               % make it compact
+\setlength{\tabcolsep}{6pt} % column spacing
+
+\begin{tabular}{
+    l
+    S[table-format=6.0]
+    S[table-format=6.0]
+    S[table-format=1.4]
+    S[table-format=6.0]
+    S[table-format=6.0]
+    S[table-format=1.4]}
+\toprule
+& \multicolumn{3}{c}{\textit{Before weighting}} 
+& \multicolumn{3}{c}{\textit{After ATT weighting}}\\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+& {Control} & {Treated} & {$p$} 
+& {Control} & {Treated} & {$p$}\\
+\midrule
+Flood–risk group decile            & 11.563 & 14.150 & 0.0000 & 14.537 & 14.471 & 0.0000\\
+Share of establishments under EAIP &  0.199 &  0.208 & 0.0000 &  0.211 &  0.212 & 0.0000\\
+Income–category score              & 20363.90 & 20359.84 & 0.4810 & 20256.70 & 20374.63 & 0.0000\\
+Urban dummy                        &  0.713 &  0.825 & 0.0000 &  0.822 &  0.822 & 0.0002\\
+Coastal dummy (littoral sea)       &  0.105 &  0.222 & 0.0000 &  0.209 &  0.210 & 0.0008\\
+\bottomrule
+\end{tabular}
+
+\begin{tablenotes}[flushleft]
+\small
+\textit{Notes.}
+Means are reported for control and treated firms in the raw sample
+(columns 2–3) and after applying inverse-probability ATT weights
+(columns 5–6).  
+$p$-values test equality of control and treated means:
+two-sample unequal-variance $t$-tests before weighting,
+and weighted regressions of each covariate on the treatment indicator
+after weighting. Table X compares baseline covariates between establishments that ever experience an extreme flood during 2010–2019 (‘treated’) and those that never do (‘controls’). Column 1 shows raw differences; Column 2 applies the inverse-probability weights that are later used in the stacked DiD estimation. After weighting, no covariate differs significantly at the 5\% level, indicating good observable balance before we turn to outcome dynamics. I am actually comapring ever treated and what?
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

@@ -1,0 +1,50 @@
+\begin{table}[!htbp]
+\centering
+\caption{\textbf{Table \ref{tab:lpdid_pooled}}: \textsc{Main LP-DiD Estimates at Establishment Level}}
+\label{tab:lpdid_pooled}
+
+\resizebox{16.3cm}{!}{
+\begin{tabular}{@{\extracolsep{6pt}}p{6.5cm}cccccc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+& \multicolumn{6}{c}{\textit{Dependent variable:}} \\
+\cline{2-7}
+\\[-1.8ex] 
+& Employment 31.12 & Wages 31.12 & Temporary contracts & Employment Yearly & Hourly Wages & Total Revenue \\
+&  &  &  & & & \\
+\hline \\[-1.8ex]
+
+\textbf{Post-Treatment Average Effect} \\[0.15em]
+\textit{A. Full Sample} \\[0.15em]
+Treated (=1) $\times$ Post (=1) 
+& $-$0.151$^{***}$ & $-$233.62$^{***}$ & $-$0.0026 & $-$0.424 & $-$0.055 & 486.689 \\
+& (0.063)           & (77.57)         & (0.0025)     & (0.287) & (0.033) & (263.316) \\[0.75em]
+
+\textit{B. By strata} \\[0.15em]
+Mono-establishment (=1) 
+& $-$0.022 & $-$524.13$^{***}$ & $-$0.0052 & $-$0.0070 & $-$0.170$^{**}$ & $-$15.388 \\
+& (0.012)  & (127.62)          & (0.0047)  & (0.023)   & (0.079)         & (20.013) \\[0.25em]
+
+Litorale (=1) 
+& $-$0.134$^{*}$ & $-$114.26 & $-$0.0130$^{**}$ & $-$0.072 & 0.077 & 393.69 \\
+& (0.180)        & (191.26)  & (0.0059)         & (0.347)  & (0.076)  & (448.64) \\[0.25em]
+
+Mono-estab. (=1) $\times$ Litorale (=1) 
+&   $-$0.031     &  $-$681.695$^{**}$  &  $-$0.038$^{**}$  &  $-$0.021     &   0.119     & $-$29.77 \\
+&    (0.043)    &   (288.359)     &      ($-$0.0066)     &   (0.051)     &  (0.144)      & (19.13) \\[0.5em]
+
+\hline \\[-1.8ex]
+Total observations         & 6.82M & 6.82M & 6.82M & 6.82M & 6.82M & 6.82M \\
+\textit{Fixed effects}     &       &       &       &       &       & \\
+Year                       & Yes   & Yes   & Yes   & Yes   & Yes   & Yes \\
+Commune                    & Yes   & Yes   & Yes   & Yes   & Yes   & Yes \\
+Flood risk group $\times$ Section $\times$ Year 
+                          & Yes   & Yes   & Yes   & Yes   & Yes   & Yes \\
+Clustered SEs at establishment   
+                          & Yes   & Yes   & Yes   & Yes   & Yes   & Yes \\
+
+\hline
+\hline \\[-1.8ex]
+\multicolumn{7}{p{23cm}}{\textit{Notes:} Each column reports pooled Local Projection DiD coefficients for the post-treatment period (mean of event times $k = 0$ to $5$). Robust standard errors clustered at the establishment level (\texttt{SIRET}) in parentheses. $^{*}p<0.10$; $^{**}p<0.05$; $^{***}p<0.01$.}
+\end{tabular}}
+\end{table}

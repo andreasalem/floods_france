@@ -1,0 +1,368 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Packages are included below, these are akin to libraries in other programming languages. As far as I can tell, there is no reason to reduce the number of packages included in a document. It might compile faster, but overleaf compiles fast so this should not be an issue.
+\documentclass[hidelinks,11pt,twoside]{report} %tells the compiler that this is a 'report' style document, and the main font size.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{setspace} %allows the use of '\doublespace' to set line spacing
+\usepackage[english]{babel} %this does a few things e.g. allowing dates to be made by the compiler. probably best not to get rid of it
+\usepackage{graphicx} %this allows graphics to be put in easily
+\usepackage{float}%this allows you to put them in good places
+\usepackage[version=4]{mhchem} %this is good for chemical reactions
+\usepackage{epigraph} %citation introduction
+\usepackage{blindtext}
+\renewcommand{\textflush}{flushepinormal}
+\usepackage{adjustbox}   %NEW
+\newenvironment{compactepigraph}
+  {%
+    \par\vspace{0pt}% tighten space above
+    \noindent
+    \begin{minipage}{0.95\textwidth}%
+      \begin{flushright}%
+        \small\itshape
+  }
+  {%
+        % end of quote text
+        \par\nobreak\vspace{0.3\baselineskip}% small gap
+        \noindent\makebox[\linewidth]{\rule{0.4\textwidth}{0.4pt}}% rule
+        \par\nobreak\vspace{0.3\baselineskip}% small gap
+        \normalfont% switch back to upright
+      \end{flushright}%
+    \end{minipage}%
+    \vspace{0pt}\par% tighten space below
+  }
+
+\usepackage{amsmath} %maths package
+\usepackage{amssymb} %symbol package
+\usepackage{textcomp,gensymb} %more symbols (eg \degree)
+\usepackage{colortbl} %good for colouring in cells on a table
+\usepackage{rotating} %allows you to rotate graphics
+\usepackage{bm} %helps bold things
+\usepackage{multirow} %for tables
+\usepackage{longtable} %for long tables
+\usepackage{booktabs} %more tables
+\usepackage{pdfpages} %allows PDFs to be included in document (good if you want to include a pdf in an appendix eg)
+\usepackage{caption} %allows captions for graphics
+\usepackage[nottoc]{tocbibind} %adds the bibliography to the table of contents
+\usepackage{subcaption} %allows subcaption for multiple images in one graphic
+
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+\usepackage{hyperref} %this is great for putting hyperreferences in the document.
+\usepackage[table]{xcolor} %more colouring of tables
+\definecolor{Gray}{gray}{0.9} %this defines a colour to be used and gives it a name. This is a colour called 'Gray' it is 'gray' with transparency 0.9
+
+\hypersetup{colorlinks=false} %this stops links being colourful, which makes a report look less professional I believe.
+\usepackage[flushleft]{threeparttable}
+\usepackage{caption}
+
+\usepackage[letterpaper, top=1in, bottom = 1in, right = 1in]{geometry} %this describes the layout of the document and the margins etc.
+
+\usepackage[labelformat=empty]{caption} % this way, I can have "Figure X" in bold below ech figure
+
+% remove indentation and ensure blank line between paragraphs
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{1em}
+
+\setlength{\parindent}{15pt}
+\setlength{\parskip}{0pt}
+
+%\doublespacing %self explanatory
+\onehalfspacing
+
+\usepackage{apacite}
+
+
+\usepackage{pdflscape}   % rotate the page
+\usepackage{array}       % better column types
+\usepackage{longtable}   % multipage tables
+\usepackage{booktabs}
+\usepackage{threeparttablex} % longtable-compatible notes
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+
+
+
+
+\usepackage{hyperref}
+\usepackage{url}
+
+\usepackage{natbib}
+
+\usepackage{multibib}
+\newcites{internet}{Internet References}
+
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+\usepackage{titlesec}    
+ 
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{}{\LARGE\thechapter.\ }
+   
+\titleformat*{\section}{\Large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+\titleformat*{\subsubsection}{\normalsize\bfseries}
+
+
+\usepackage[dvipsnames]{xcolor}
+ 
+\usepackage[nottoc]{tocbibind}
+
+
+\usepackage{url}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+
+\usepackage{listings}
+
+\usepackage{xcolor}
+
+\usepackage{enumitem}
+
+\usepackage{comment}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codeblack}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{white},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{black},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\usepackage{chngcntr}
+\usepackage{titling}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+\usepackage{tocloft}
+\renewcommand{\cftfigpresnum}{}
+\renewcommand{\cftfigaftersnum}{}
+\renewcommand{\cfttabpresnum}{}
+\renewcommand{\cfttabaftersnum}{}
+
+\cftsetindents{figure}{0em}{3.5em}
+\cftsetindents{table}{0em}{3.5em}
+
+\usepackage{tocbasic}
+
+\usepackage[title,toc,titletoc,page]{appendix}
+\usepackage{blindtext}
+
+
+% Format the title for chapters
+\titleformat{\chapter}{\normalfont\LARGE\bfseries}{\thechapter.}{20 pt}{\LARGE}
+\titlespacing*{\chapter}{0pt}{-20pt}{10pt}
+
+
+\renewcommand\cfttoctitlefont{\LARGE \bfseries}
+\addtocontents{toc}{\vskip -1.5cm}
+
+\renewcommand\cftloftitlefont{\LARGE \bfseries}
+\addtocontents{lof}{\vspace*{-6ex}}%
+
+
+\renewcommand\cftlottitlefont{\LARGE \bfseries}
+\addtocontents{lot}{\vspace*{-6ex}}%
+
+
+% Set up links
+\definecolor{light_blue}{rgb}{0.180, 0.188, 0.573}
+
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,    % internal document links
+    citecolor=blue,    % citation links
+    filecolor=blue,    % file links
+    urlcolor=blue      % external urls
+}
+
+
+
+\usepackage[savewrites,nonumberlist, seeautonumberlist]{glossaries}
+\glstoctrue
+\newglossarystyle{mystyle}{
+  \renewenvironment{theglossary}
+    {\begin{longtable}[l]{p{3cm}p{\glsdescwidth}}}
+    {\end{longtable}}
+  \renewcommand*{\glossaryheader}{%
+    \textbf{\glossaryname} \\
+    \textbf{Term} & \textbf{Description} \\
+    \endhead
+  }
+  \renewcommand*{\glossentry}[2]{%
+    \glsentryitem{##1}\textbf{\glstarget{##1}{\glossentryname{##1}}} &
+    \glossentrydesc{##1}\\
+  }
+  \renewcommand*{\subglossentry}[3]{%
+    \glsentryitem{##2}\hspace*{10pt}\glstarget{##2}{\glossentryname{##2}} &
+    \glossentrydesc{##2}\\
+  }
+}
+
+\renewcommand{\glsnamefont}[1]{\textbf{#1}}
+
+\setlength{\cftbeforechapskip}{1.5pt}
+\renewcommand\cftchapafterpnum{\vskip2pt}
+\renewcommand\cftsecafterpnum{\vskip1pt}
+\renewcommand\cftsubsecafterpnum{\vskip1pt}
+
+%toc
+\addto{\captionsenglish}{\renewcommand*{\contentsname}{Table of Contents}}
+\setlength{\cftbeforetoctitleskip}{20pt}
+\setlength{\cftaftertoctitleskip}{60pt} 
+%lof
+\setlength{\cftbeforeloftitleskip}{0pt} 
+\setlength{\cftafterloftitleskip}{40pt} 
+%lot
+\setlength{\cftbeforelottitleskip}{20pt} 
+\setlength{\cftafterlottitleskip}{40pt} 
+
+\setcounter{table}{-1}
+
+\renewcommand{\glossarypreamble}{\vspace*{-10pt}}
+
+\captionsetup[subfigure]{justification=centering}
+\captionsetup[subtable]{justification=centering}
+\captionsetup[table]{justification=centering}
+\captionsetup[figure]{justification=centering}
+
+\makeglossaries
+
+\newglossaryentry{}
+{name=XXX, description={XXX}}
+
+
+%\usepackage{fancyhdr}
+%\usepackage{etoolbox}
+
+%\fancypagestyle{fancy}{%
+ %\fancyhf{}
+%\rhead{Valentine Di Lello}
+%\lhead{\leftmark}
+%\cfoot{\thepage}
+%\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+%}
+
+
+
+\begin{document} % you have to do this to start the document
+
+
+%%%%%%%%%%%%%%%%
+%For a long report such as a thesis, I would recommend thinking like programming, that is, have a short 'main' and long programs (or chapters in this case) this allows you to access each chapter easily and see the layout of the document easily.
+%
+%using \input{} basically puts the code specified in the argument (between the braces) into the body of the code in main
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The entire thesis is generated by the commands below, referencing the other files in this directory.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{preamble/titlepage.tex}
+
+
+
+\pagenumbering{Roman} %Roman numbering is recommended until the body
+\pagestyle{plain}
+\input{preamble/abstract.tex}
+\input{preamble/acknowledgements}
+
+% TOC
+\newpage
+\setcounter{table}{0}
+%\setcounter{tocdepth}{0}
+\begin{doublespace}
+\tableofcontents 
+\end{doublespace}
+\let\origaddvspace\addvspace
+
+% LIST OF FIGURES & TABLES
+\newpage
+{\renewcommand{\addvspace}[1]{} \listoffigures}
+{\renewcommand{\addvspace}[1]{} \listoftables}
+
+\printglossary[style = mystyle,title=List of Abbreviations, toctitle = List of Abbreviations, nonumberlist]
+
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\pagestyle{fancy}
+\pagenumbering{arabic} %back to Arabic numbering for the main body
+\input{chapters/1. Introduction} 
+\newpage
+\input{chapters/2. Literature Review}
+\newpage
+\input{chapters/3. Institutional Background}
+\newpage
+\input{chapters/4. Data}
+\input{chapters/5. Empirical Strategy}
+\input{chapters/6. Results}
+\newpage
+\input{chapters/7. Discussion}
+\newpage
+\input{chapters/8. Conclusion}
+
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{Roman} %Roman numbering for the last pages
+\setcounter{page}{5}
+
+\bibliographystyle{apacite}
+\bibliographystyleinternet{apacite}
+ 
+ %References are directly linked to my web library from Zotero
+ 
+\bibliography{references.bib}
+ 
+% \bibliographyinternet{references.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendices
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+
+\renewcommand{\thefigure}{A\arabic{figure}}  % Prefix all figure numbers in appendix with "A"
+\setcounter{figure}{0} 
+
+\renewcommand{\thetable}{A\arabic{table}}  % Prefix appendix tables with "A"
+\setcounter{table}{0} 
+
+\input{Annexes/main}
+
+
+\end{document}
+
+
+
+
+
+
+
+
