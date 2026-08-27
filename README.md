@@ -46,9 +46,9 @@ repository; the code is published for transparency and cannot be run without CAS
 
 Scripts were written and executed inside the CASD secure enclave; paths therefore point to the
 enclave file system (e.g. `C:/Users/Public/Documents/...`) and are not portable by design. The
-run order and per-script documentation are in [`code/README.md`](code/README.md). Requires R
-(tidyverse, data.table, fixest, did, DIDmultiplegtDYN, arrow, terra, sf) and Stata (lpdid,
-did_imputation, csdid, eventstudyinteract).
+run order and per-script documentation are in [`code/README.md`](code/README.md); the full
+R + Stata package surface is in [`code/ENVIRONMENT.md`](code/ENVIRONMENT.md). Code is
+MIT-licensed; the manuscript text is © the author (see `LICENSE`).
 
 ## Related work
 
