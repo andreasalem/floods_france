@@ -1,0 +1,54 @@
+---
+title: "Data & Code"
+toc: true
+---
+
+The full replication repository is at
+[github.com/andreasalem/floods_france](https://github.com/andreasalem/floods_france).
+
+## Data availability
+
+The microdata are **confidential** and accessed through
+[CASD](https://www.casd.eu/) (Centre d'accès sécurisé aux données). No microdata are or ever
+will be in the repository.
+
+| Source | Content | Access |
+|---|---|---|
+| DADS Postes (INSEE) | Matched employer–employee panel, all French establishments | CASD |
+| FARE / FICUS (INSEE–DGFiP) | Firm financial statements | CASD |
+| GASPAR (Géorisques) | CatNat ministerial disaster declarations | Public |
+| JRC flood hazard maps (Dottori et al.), TRI, ONRN EAIP | Flood-depth rasters and flood-prone areas | Public |
+
+: Data sources and access {#tbl-access}
+
+The full manifest — files, vintages, and download locations — is in the repository's
+[`data/README.md`](https://github.com/andreasalem/floods_france/blob/main/data/README.md).
+
+## Code: two tracks, two guarantees
+
+**`code/casd_export_2025-07/`** is the exact code that produced the thesis results, exported
+from the CASD secure enclave on 2025-07-09 and kept byte-frozen as the provenance record — a
+19-script R + Stata pipeline whose main specification is LP-DiD (Dube–Girardi–Jordà–Taylor)
+via Stata's `lpdid`.
+
+**`code/pipeline/`** is a clean R rewrite in progress: numbered scripts, portable paths,
+`renv`-pinned. The public-data stages — the GASPAR flood treatment and the flood-risk raster
+exposure measures — run end-to-end outside the enclave and are verified against the thesis
+figures. The confidential-data stages are faithful rewrites that carry an explicit
+verification status until they can be checked against the frozen export inside CASD.
+
+The honest status of every reproducibility claim is maintained in the repository's
+[README](https://github.com/andreasalem/floods_france#reproducibility-honestly-stated).
+
+## Citation
+
+```bibtex
+@mastersthesis{salem2025flood,
+  author = {Salem, Andrea},
+  title  = {After the Flood: The Impact of Flooding on Employment and Wages in French Firms},
+  school = {Paris School of Economics},
+  year   = {2025},
+  type   = {M2 Master's thesis},
+  note   = {Master Public Policy and Development}
+}
+```

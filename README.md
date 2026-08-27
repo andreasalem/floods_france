@@ -23,9 +23,9 @@ of economic activity.
 **Keywords:** Firm performance, Wages, Natural disasters · **JEL:** D22, Q54, R11
 
 <p align="center">
-  <img src="paper/src/figures/Results/EFF_ALL_all.png" width="640"
-       alt="Event-study estimates: employment response of flooded establishments"><br>
-  <em>Employment response of establishments hit by an extreme flood (LP-DiD event study).</em>
+  <img src="paper/src/figures/Results/Analysis_Firms/EFF_3112_weighted.png" width="640"
+       alt="Pooled LP-DiD event study: end-of-year headcount response of flooded establishments"><br>
+  <em>End-of-year headcount response of establishments hit by an extreme flood (pooled LP-DiD event study, ATT-weighted).</em>
 </p>
 
 ## Repository structure

@@ -1,0 +1,38 @@
+project:
+  type: website
+  output-dir: ../docs
+
+website:
+  title: "After the Flood"
+  description: "The impact of flooding on employment and wages in French firms — M2 thesis, Paris School of Economics"
+  navbar:
+    background: "#12395B"
+    foreground: "#F5F1E8"
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Paper"
+        href: paper.qmd
+      - text: "Data & Code"
+        href: data-code.qmd
+    right:
+      - text: "PDF"
+        href: Salem_2025_The_Impact_of_Flooding_on_Employment_and_Wages.pdf
+      - icon: github
+        href: https://github.com/andreasalem/floods_france
+        aria-label: GitHub
+  page-footer:
+    left: "© 2025 Andrea Salem · Paris School of Economics"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme: [cosmo, styles.scss]
+    toc: true
+    toc-depth: 3
+    smooth-scroll: true
+    link-external-newwindow: true
+    fig-align: center
+    lightbox: true
+
+bibliography: references.bib
