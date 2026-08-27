@@ -1,8 +1,10 @@
-# After the Flood — The Impact of Flooding on Employment and Wages
+# After the Flood — The Impact of Flooding on Employment and Wages in French Firms
 
-M2 thesis, Paris School of Economics (2025). Author: Andrea Salem.
+M2 thesis, Paris School of Economics (2025) · Andrea Salem
+Supervisors: François Fontaine, Sara Signorelli · Referee: Hélène Ollivier
 
-**📄 Read the paper:** [`Salem_2025_The_Impact_of_Flooding_on_Employment_and_Wages.pdf`](Salem_2025_The_Impact_of_Flooding_on_Employment_and_Wages.pdf)
+**📄 Paper:** [`paper/Salem_2025_The_Impact_of_Flooding_on_Employment_and_Wages.pdf`](paper/Salem_2025_The_Impact_of_Flooding_on_Employment_and_Wages.pdf)
+**🌐 Website:** *coming soon*
 
 ## Abstract
 
@@ -20,37 +22,72 @@ of economic activity.
 
 **Keywords:** Firm performance, Wages, Natural disasters · **JEL:** D22, Q54, R11
 
+<p align="center">
+  <img src="paper/src/figures/Results/EFF_ALL_all.png" width="640"
+       alt="Event-study estimates: employment response of flooded establishments"><br>
+  <em>Employment response of establishments hit by an extreme flood (LP-DiD event study).</em>
+</p>
+
 ## Repository structure
 
 ```
-├── Salem_2025_...pdf     # compiled thesis (as submitted)
-├── manuscript/           # full LaTeX source (chapters, tables, figures, bibliography)
-├── code/                 # analysis pipeline (R + Stata), exported from CASD — see code/README.md
-└── output/tables/        # regression output exported from the secure enclave
+├── paper/
+│   ├── Salem_2025_….pdf          # the thesis, as submitted (August 2025)
+│   ├── src/                      # full LaTeX source — frozen; see paper/ERRATA.md
+│   └── ERRATA.md                 # build verification + known source quirks
+├── code/
+│   ├── casd_export_2025-07/      # the exact code that produced the results (frozen, provenance)
+│   └── pipeline/                 # clean R rewrite — public-data stages runnable end-to-end
+├── data/                         # no data committed; sources + vintages in data/README.md
+└── output/tables/                # disclosure-cleared regression output from the enclave
 ```
+
+The two code tracks have different guarantees — provenance vs. reproducibility — explained in
+[`code/README.md`](code/README.md).
 
 ## Data availability
 
-The microdata are **confidential** and are accessed through [CASD](https://www.casd.eu/)
-(Centre d'accès sécurisé aux données). No microdata are or ever will be contained in this
-repository; the code is published for transparency and cannot be run without CASD access.
+The microdata are **confidential** and accessed through [CASD](https://www.casd.eu/) (Centre
+d'accès sécurisé aux données). No microdata are or ever will be in this repository.
 
 | Source | Content | Access |
 |---|---|---|
 | DADS Postes (INSEE) | Matched employer–employee panel, all French establishments | CASD |
 | FARE / FICUS (INSEE–DGFiP) | Firm financial statements | CASD |
-| GASPAR (MTE) | CatNat ministerial disaster declarations | Public ([georisques.gouv.fr](https://www.georisques.gouv.fr/)) |
-| Flood-risk rasters (EAIP / TRI) | Flood-prone area extent used for risk exposure | Public |
+| GASPAR (Géorisques) | CatNat ministerial disaster declarations | Public |
+| JRC flood hazard maps (Dottori et al.), TRI, ONRN EAIP | Flood depth rasters and flood-prone areas | Public |
 
-## Reproducibility
+Full manifest with files, vintages, and download sources: [`data/README.md`](data/README.md).
 
-Scripts were written and executed inside the CASD secure enclave; paths therefore point to the
-enclave file system (e.g. `C:/Users/Public/Documents/...`) and are not portable by design. The
-run order and per-script documentation are in [`code/README.md`](code/README.md); the full
-R + Stata package surface is in [`code/ENVIRONMENT.md`](code/ENVIRONMENT.md). Code is
-MIT-licensed; the manuscript text is © the author (see `LICENSE`).
+## Reproducibility, honestly stated
+
+| Claim | Status |
+|---|---|
+| The LaTeX source reproduces the submitted PDF | ✅ Verified — 52/52 pages, word-for-word identical text ([details](paper/ERRATA.md)) |
+| `code/casd_export_2025-07/` is the code that produced the thesis numbers | ✅ CASD export of 2025-07-09, byte-frozen ([provenance](code/casd_export_2025-07/README.md)) |
+| Flood-treatment and exposure construction re-runs on public data | 🔄 In progress — `code/pipeline/`, outputs diffed against thesis figures |
+| Rewritten confidential-data pipeline matches the enclave results | ⏳ Owed to the next CASD session; until then the rewrite is labeled unverified |
+
+Environment details (R and Stata package surface): [`code/casd_export_2025-07/ENVIRONMENT.md`](code/casd_export_2025-07/ENVIRONMENT.md).
+
+## Citation
+
+```bibtex
+@mastersthesis{salem2025flood,
+  author = {Salem, Andrea},
+  title  = {After the Flood: The Impact of Flooding on Employment and Wages in French Firms},
+  school = {Paris School of Economics},
+  year   = {2025},
+  type   = {M2 Master's thesis},
+  note   = {Master Public Policy and Development}
+}
+```
 
 ## Related work
 
 This thesis feeds the flood-risk pillar of my PhD research agenda (CASD-based follow-ups on
 adaptation, insurance regimes, and belief formation after disasters).
+
+## License
+
+Code is MIT-licensed; the manuscript text and figures are © the author (see [`LICENSE`](LICENSE)).

@@ -21,7 +21,15 @@
 *.smcl
 
 # Data must never enter this repo (CASD-confidential)
-/data/
+/data/*
+!/data/README.md
 *.dta
 *.parquet
 *.csv
+*.tif
+*.shp
+*.gpkg
+
+# renv (lockfile IS committed when it lands)
+code/pipeline/renv/library/
+code/pipeline/renv/staging/
