@@ -33,3 +33,7 @@
 # renv (lockfile IS committed when it lands)
 code/pipeline/renv/library/
 code/pipeline/renv/staging/
+
+# pipeline data artifacts (regenerable; verification/ IS committed)
+code/pipeline/_outputs/
+!code/pipeline/verification/*.csv

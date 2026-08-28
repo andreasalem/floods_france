@@ -38,6 +38,18 @@ non-fatal errors listed above (pdflatex exits non-zero but produces the complete
 
 ## Substantive errata
 
-None recorded. If the code rewrite (`code/pipeline/`) surfaces a material issue in the
-analysis, it will be documented in a GitHub issue and summarized here — see the protocol in
-[`../code/README.md`](../code/README.md).
+Found by the public-data pipeline's differential audit (2026-08-28); full evidence in
+[`code/pipeline/verification/VERIFICATION.md`](../code/pipeline/verification/VERIFICATION.md).
+No estimate, table, or the risk index itself is affected by either item.
+
+1. **Depth-distribution sentence** ([issue #5](https://github.com/andreasalem/floods_france/issues/5)).
+   The Appendix states that "90% of all flooded cells fall between 0.07 and 3 meters in water
+   depth." Measured on the RP100 France raster actually used (4,648,816 flooded cells), the
+   share in (0.07, 3] m is **70.5%**, and the central-90% interval is **[0.34, 6.74] m**
+   (median 1.84 m). The qualitative point (right-skewed distribution) stands; the figures do not.
+2. **Raster cell size** ([issue #4](https://github.com/andreasalem/floods_france/issues/4)).
+   The Appendix describes "a grid of 90m × 90m cells"; the projected raster the index is
+   computed from has 100m × 100m cells.
+
+If the code rewrite surfaces further material issues, they will be documented in a GitHub
+issue and summarized here — see the protocol in [`../code/README.md`](../code/README.md).

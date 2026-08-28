@@ -3,12 +3,16 @@
 Clean-room R rewrite of the thesis pipeline. Numbered scripts, one entry point
 (`00_run_all.R`), portable paths via a single `config` block, dependencies pinned with `renv`.
 
-**Status: scaffold.** Scripts land in two waves:
+**Status: public-data spine landed and verified.** Run from this directory:
+`Rscript 03_gaspar_treatment.R && Rscript 04_flood_risk.R && Rscript verify_public_spine.R`
+(paths configurable via env vars — see `config.R`). The differential audit
+(`verification/VERIFICATION.md`) compares every output against the author's original
+intermediates and the numbers printed in the thesis.
 
 | Stage | Scripts (planned) | Data | Runnable outside CASD? | Verification |
 |---|---|---|---|---|
-| Treatment: CatNat flood declarations | `03_gaspar_treatment.R` | GASPAR (public) | **Yes** | Outputs diffed against the thesis figures/counts |
-| Flood-risk exposure | `04_flood_risk.R` | Dottori rasters, TRI, EAIP (public) | **Yes** | Outputs diffed against the thesis figures |
+| Treatment: CatNat flood declarations | `03_gaspar_treatment.R` | GASPAR (public) | **Yes — landed** | ✅ Exact match: all 125,043 commune-years identical to the original `gaspar_floods.csv`; thesis flood-history table matches all 21 years |
+| Flood-risk exposure | `04_flood_risk.R` | Dottori RP100 raster (public) | **Yes — landed** | Diffed per-band against the original `communes_risk_RP100.gpkg` (see VERIFICATION.md) |
 | DADS Postes cleaning | `01_dads_postes.R` | Confidential (CASD) | No | Owed to next CASD session |
 | FARE/FICUS cleaning | `02_fare_ficus.R` | Confidential (CASD) | No | Owed to next CASD session |
 | Matching + merge | `05_match_merge.R` | Confidential (CASD) | No | Owed to next CASD session |
