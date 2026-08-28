@@ -65,7 +65,8 @@ Full manifest with files, vintages, and download sources: [`data/README.md`](dat
 |---|---|
 | The LaTeX source reproduces the submitted PDF | ✅ Verified — 52/52 pages, word-for-word identical text ([details](paper/ERRATA.md)) |
 | `code/casd_export_2025-07/` is the code that produced the thesis numbers | ✅ CASD export of 2025-07-09, byte-frozen ([provenance](code/casd_export_2025-07/README.md)) |
-| Flood-treatment and exposure construction re-runs on public data | 🔄 In progress — `code/pipeline/`, outputs diffed against thesis figures |
+| Flood-treatment construction (GASPAR) re-runs on public data | ✅ Verified — exact reproduction: all 125,043 commune-years identical to the original, thesis flood-history table matched for all 21 years ([audit](code/pipeline/verification/VERIFICATION.md)) |
+| Flood-risk exposure index (RP100 raster) re-runs on public data | ✅ Verified — risk index invariant to 1.2e-8 across 34,826 communes; per-band shares differ only by GDAL resampling version ([audit](code/pipeline/verification/VERIFICATION.md)) |
 | Rewritten confidential-data pipeline matches the enclave results | ⏳ Owed to the next CASD session; until then the rewrite is labeled unverified |
 
 Environment details (R and Stata package surface): [`code/casd_export_2025-07/ENVIRONMENT.md`](code/casd_export_2025-07/ENVIRONMENT.md).
